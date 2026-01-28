@@ -1,0 +1,107 @@
+/**************************************************************
+    Jogos Digitais SG
+    ExecuteItemCommand
+
+    Descrição: Dita como o objeto ira reagir a interação com determinado item.
+
+    Candle Light - Jogos Digitais LURDES –  13/03/2024
+    Modificado por: Italo
+***************************************************************/
+
+//----------------------------- Bibliotecas Usadas -------------------------------------
+
+using UnityEngine;
+using System.Collections.Generic;
+//public enum ItemType{Single, Multiple}
+
+public class ExecuteItemCommand : Interactable, IObserver
+{
+    [Tooltip("Referência para codigo que terá como esse item funciona")]
+    [SerializeField]
+    protected MonoBehaviour _multipleCode;
+    protected IMultiple _multiple => _multipleCode as IMultiple;
+
+    public bool completed = false;
+    [SerializeField] protected List<MonoBehaviour> interactions = new List<MonoBehaviour>();
+
+    
+    /*------------------------------------------------------------------------------
+    Função:     OnEnable
+    Descrição:  Registra o Objeto na lista de Observadores do item especifico.
+    Entrada:    -
+    Saída:      -
+    ------------------------------------------------------------------------------*/
+    private void OnEnable(){
+        RegisterEvent();
+    }
+    /*------------------------------------------------------------------------------
+    Função:     OnDisable
+    Descrição:  Desregistra o Objeto na lista de Observadores do item especifico.
+    Entrada:    -
+    Saída:      -
+    ------------------------------------------------------------------------------*/
+    private void OnDisable(){
+        UnregisterEvent();
+    }
+    /*------------------------------------------------------------------------------
+    Função:     OnEventRaised
+    Descrição:  Chama a função respectiva do Atuador, para que ele possa executar sua função.
+    Entrada:    int - indentificação para dizer qual ação o atuador fará.
+                object - Informação com tipo generico do que o objeto faz
+    Saída:      -
+    ------------------------------------------------------------------------------*/
+    public void OnEventRaised(int message, object additionalInformation)
+    {
+        if (_multipleCode != null && !_multiple.Validator(additionalInformation)) return;
+        ExecuteOrder(message);
+        completed = true;
+        foreach(ObserverEventChannel channel in _observerEventSpeak)
+        {
+            if(channel != null)
+            {
+                channel.NotifyObservers(1, 1);
+            }
+        }
+    }
+    /*------------------------------------------------------------------------------
+    Função:     UnregisterEvent
+    Descrição:  Desregistra o Objeto na lista de Observadores do item especifico.
+    Entrada:    -
+    Saída:      -
+    ------------------------------------------------------------------------------*/
+    protected override void UnregisterEvent(){
+        UnregisterEventPublic();
+    }
+
+    /*------------------------------------------------------------------------------
+    Função:     RegisterEvent
+    Descrição:  Registra este objeto como um observador em todos os canais de evento.
+    Entrada:    -
+    Saída:      -
+    ------------------------------------------------------------------------------*/
+    public void RegisterEvent(){
+        if (_observerEventListening != null){
+            foreach (var channel in _observerEventListening ){
+                if (channel != null){
+                    channel.RegisterObserver(this);
+                }
+            }
+        }
+    }
+    /*------------------------------------------------------------------------------
+    Função:     UnregisterEventPublic
+    Descrição:  Desregistra este objeto de todos os canais de evento.
+    Entrada:    -
+    Saída:      -
+    ------------------------------------------------------------------------------*/
+    public void UnregisterEventPublic(){
+        if (_observerEventListening  != null){
+            foreach (var channel in _observerEventListening ){
+                if (channel != null){
+                    channel.UnregisterObserver(this);
+                }
+            }
+        }
+    }
+
+}
