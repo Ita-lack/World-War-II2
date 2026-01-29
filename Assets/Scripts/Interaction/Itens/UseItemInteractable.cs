@@ -22,14 +22,18 @@ public class UseItemInteractable : Interactable, IInteractable
   public void BaseAction(){
     action = !action;
     message = action ? 1 : 0;
-    Debug.Log("UseItemInteractable BaseAction called with message: " + message);
-    if (_observerEventSpeak != null){
-      foreach (var channel in _observerEventSpeak){
-        if (channel != null){
+
+    if (_observerEventSpeak != null)
+    {
+      foreach (var channel in _observerEventSpeak)
+      {
+        if (channel != null)
+        {
           channel.NotifyObservers(message);
         }
       }
     }
+
     ExecuteOrder(message);
   }
 }
