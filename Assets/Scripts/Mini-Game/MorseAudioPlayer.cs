@@ -13,8 +13,8 @@ public class MorseAudioPlayer : MonoBehaviour
     [SerializeField] private float unitTime = 0.08f; // velocidade do morse
 
     //Tools
-    private int x;
-    private int y;
+    private int x = 100;
+    private int y = 100;
 
     private AudioSource source;
 
