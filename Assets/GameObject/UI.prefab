@@ -933,7 +933,7 @@ MonoBehaviour:
   longitudeSlider: {fileID: 4652913803714769456}
   mapMarking: {fileID: 5091201161349092413}
   mapArea: {fileID: 9103363437831499447}
-  mAPTelegraph: {fileID: 0}
+  mAPTelegraph: {fileID: 7199392534321219187}
 --- !u!114 &8311267574642574678
 MonoBehaviour:
   m_ObjectHideFlags: 0

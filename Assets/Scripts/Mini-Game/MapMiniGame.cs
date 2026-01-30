@@ -16,6 +16,8 @@ public class MapMiniGame : Interactable, IInteractable
     private float xEixo;
     private float yEixo;
 
+    private bool confirm = true;
+
     private Vector2 coord = new Vector2();
     public void Start(){
         UpdateNewPuzzle();
@@ -41,6 +43,7 @@ public class MapMiniGame : Interactable, IInteractable
         //
         coord.x = latitude;
         coord.y = longitude;
+        Debug.Log($"[MapMiniGame] Current Coord: {coord} - Target Coord: {mAPTelegraph.GetCurrentCoords()}");
         if(coord !=  mAPTelegraph.GetCurrentCoords())return; 
         if (_observerEventSpeak != null){
             foreach (var channel in _observerEventSpeak){
