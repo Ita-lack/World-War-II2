@@ -33,7 +33,6 @@ public class UseItemInteractable : Interactable, IInteractable
         }
       }
     }
-
     ExecuteOrder(message);
   }
 }
