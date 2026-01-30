@@ -7,7 +7,7 @@ public class MapMiniGame : Interactable, IInteractable
     public Slider longitudeSlider;
     public RectTransform mapMarking;
     public RectTransform mapArea;
-    public TelegraphMinigame telegraphMinigame;
+    public MorseAudioPlayer mAPTelegraph;
     private float latitude;         
     private float longitude;
 
@@ -41,7 +41,7 @@ public class MapMiniGame : Interactable, IInteractable
         //
         coord.x = latitude;
         coord.y = longitude;
-        if(coord != new Vector2(0,0)/*telegraphMinigame.GetCurrentCoordinates()*/ )return; 
+        if(coord !=  mAPTelegraph.GetCurrentCoords())return; 
         if (_observerEventSpeak != null){
             foreach (var channel in _observerEventSpeak){
                 if (channel != null){

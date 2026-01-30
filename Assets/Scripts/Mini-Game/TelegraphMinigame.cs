@@ -2,7 +2,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class TelegraphMinigame : MonoBehaviour
+public class TelegraphMinigame :  Interactable, IObserver, IInteractable
 {
     //Variaveis
     [Header("Frequency Settings")]
@@ -161,4 +161,44 @@ public class TelegraphMinigame : MonoBehaviour
        statusText.text = "TRANSMISSION LOST";
        messagePanel.SetActive(false);
     }
+    //IObsever
+     private void OnEnable(){
+        RegisterEvent();
+    }
+
+    private void OnDisable(){
+        UnregisterEvent();
+    }
+    public void BaseAction(){
+    }
+
+    public void OnEventRaised(int message, object additionalInformation){
+        Debug.Log("[TelegraphMinigame] ResetMinigame");
+        ResetMinigame();
+    } 
+    
+    protected override void UnregisterEvent(){
+        UnregisterEventPublic();
+    }
+
+    public void RegisterEvent(){
+        if (_observerEventListening != null){
+            foreach (var channel in _observerEventListening){
+                if (channel != null){
+                    channel.RegisterObserver(this);
+                }
+            }
+        }
+    }
+
+    public void UnregisterEventPublic(){
+        if (_observerEventListening  != null){
+            foreach (var channel in _observerEventListening ){
+                if (channel != null){
+                    channel.UnregisterObserver(this);
+                }
+            }
+        }
+    }
+    
 }

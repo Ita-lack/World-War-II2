@@ -96,7 +96,7 @@ GameObject:
   m_Component:
   - component: {fileID: 372568301701264974}
   - component: {fileID: 5169655199845039675}
-  - component: {fileID: 9148797208798874624}
+  - component: {fileID: 6913298166589978776}
   m_Layer: 6
   m_Name: InteractionTest
   m_TagString: Untagged
@@ -142,7 +142,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.6034267, y: 0.58539474, z: 0.6023168}
   m_Center: {x: 0.35324085, y: -0.20730263, z: 0.012880832}
---- !u!114 &9148797208798874624
+--- !u!114 &6913298166589978776
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -151,7 +151,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8802297191566404859}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa41ddeff613eb24b88b74400a6901a4, type: 3}
+  m_Script: {fileID: 11500000, guid: c05c3729720dce942a1ac548f203834b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _actionType: 0
@@ -162,6 +162,7 @@ MonoBehaviour:
   parameterName: 
   _invertParameter: 0
   _customScripts: []
+  _telegrafoUI: {fileID: 0}
 --- !u!1 &9039090882740537015
 GameObject:
   m_ObjectHideFlags: 0

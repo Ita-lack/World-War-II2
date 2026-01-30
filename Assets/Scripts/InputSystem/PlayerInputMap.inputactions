@@ -37,7 +37,7 @@
                 {
                     "name": "WASD",
                     "id": "7f12571d-2d7d-456b-b974-4871088eb2c2",
-                    "path": "<Mouse>/leftButton",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

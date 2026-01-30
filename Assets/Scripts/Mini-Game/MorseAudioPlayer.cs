@@ -12,6 +12,10 @@ public class MorseAudioPlayer : MonoBehaviour
     [Header("Timing")]
     [SerializeField] private float unitTime = 0.08f; // velocidade do morse
 
+    //Tools
+    private int x;
+    private int y;
+
     private AudioSource source;
 
     Dictionary<char, string> morseTable = new Dictionary<char, string>()
@@ -101,8 +105,8 @@ public class MorseAudioPlayer : MonoBehaviour
     
     public string GenerateRandomCoordinates()//Gera coordenadas aleatorias
     {
-        int x = Random.Range(0, 66);//  Latitude
-        int y = Random.Range(35, 76);// Longitude
+       x = Random.Range(0, 66);//  Latitude
+       y = Random.Range(35, 76);// Longitude
 
         return $"{x} {y}";
     }
@@ -139,6 +143,12 @@ public class MorseAudioPlayer : MonoBehaviour
             }
 
         return sb.ToString();
+    }
+
+    public Vector2 GetCurrentCoords()
+    {
+        Vector2 v = new Vector2(x,y);
+        return v;
     }
 
 }

@@ -11,6 +11,7 @@ public class UseTelegrafo : Interactable, IInteractable
     public void BaseAction(){
         action = !action;
         message = action ? 1 : 0;
+        _telegrafoUI.SetActive(action);
         if (_observerEventSpeak != null){
             foreach (var channel in _observerEventSpeak){
                 if (channel != null){
