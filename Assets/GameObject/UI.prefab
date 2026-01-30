@@ -110,8 +110,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0021973, y: 84.99999}
-  m_SizeDelta: {x: 1361.3, y: 319.54}
+  m_AnchoredPosition: {x: -0.0021973, y: 0.0025024}
+  m_SizeDelta: {x: 1361.3, y: 863.29}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7731589854184367307
 CanvasRenderer:
@@ -890,11 +890,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7e61be36be81eb49908cf0077e943f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minValue: 0.54
-  maxValue: 44
-  currentValue: 22
-  minAngle: -135
-  maxAngle: 135
+  minValue: 10
+  maxValue: 100
+  currentValue: 10
+  minAngle: -150
+  maxAngle: 150
   sensitivity: 0.8
   knobTransform: {fileID: 3273130654316321088}
 --- !u!1 &2322911595535167558
@@ -927,6 +927,7 @@ RectTransform:
   m_Children:
   - {fileID: 4574087129355147973}
   - {fileID: 7423807877777300786}
+  - {fileID: 813515627511745913}
   m_Father: {fileID: 585371657130838723}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1000,10 +1001,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
+  m_Type: 3
+  m_PreserveAspect: 1
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 1
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -2525,12 +2526,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7e61be36be81eb49908cf0077e943f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minValue: 0.54
-  maxValue: 44
-  currentValue: 22
-  minAngle: -135
-  maxAngle: 135
-  sensitivity: 0.2
+  minValue: 10
+  maxValue: 100
+  currentValue: 10
+  minAngle: -90
+  maxAngle: 90
+  sensitivity: 0.25
   knobTransform: {fileID: 9054602602519685655}
 --- !u!1 &6841066141048275753
 GameObject:
@@ -2702,8 +2703,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000014305, y: 85}
-  m_SizeDelta: {x: 1361.2612, y: 319.5399}
+  m_AnchoredPosition: {x: -0.021605015, y: 0}
+  m_SizeDelta: {x: 1361.2612, y: 863.29}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8319226830860016183
 CanvasRenderer:
@@ -2733,7 +2734,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ' MessageText'
+  m_text: MessageText
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3206,9 +3207,10 @@ RectTransform:
   - {fileID: 7166090420115601695}
   - {fileID: 7526743737891104335}
   - {fileID: 1432116116090966739}
-  - {fileID: 6748393667112573234}
   - {fileID: 3591713956040458742}
   - {fileID: 1173067584334327336}
+  - {fileID: 6748393667112573234}
+  - {fileID: 7601553605216976652}
   m_Father: {fileID: 5610952645366270961}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -3228,27 +3230,174 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 548b5608bd29bfe499a21c21301bc53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minFrequency: 0.54
-  maxFrequency: 44
-  tolerance: 0.25
-  toleranceB: 0.13
-  minNeedleAngle: -60
-  maxNeedleAngle: 60
-  needleSpeed: 5
+  minFrequency: 10
+  maxFrequency: 100
+  tolerance: 0.8
+  toleranceB: 0.5
+  minNeedleAngle: -70
+  maxNeedleAngle: 70
+  needleSpeed: 6
   knobA: {fileID: 484247640670442626}
   knobB: {fileID: 322062108863311698}
   frequencyText: {fileID: 5576192135591829751}
-  signalMeter: {fileID: 3152553278252140879}
+  signalMeter: {fileID: 3490870595934544}
   needleTransform: {fileID: 7423807877777300786}
   statusText: {fileID: 4332556905922570384}
   messagePanel: {fileID: 8807147878778503829}
   messageText: {fileID: 7516637359175648996}
+  morsePlayer: {fileID: 7199392534321219187}
   messages:
-  - . -. --.. ---
-  - .--- --- .- ---
-  - ----
-  - .----
-  - ..---
+  - Test E
+  - Test J
+  - Test I
+  - Test Y
+  - Test G
+  activeMensage: 
+--- !u!1 &8257200452359194335
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7601553605216976652}
+  - component: {fileID: 7283030218324492646}
+  - component: {fileID: 7199392534321219187}
+  m_Layer: 0
+  m_Name: AudioSource
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7601553605216976652
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8257200452359194335}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -961.3079, y: -542.4678, z: -3.6172583}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 585371657130838723}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &7283030218324492646
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8257200452359194335}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 1397715735560453333, guid: 1e4df592a39ce27459c63ba7372a1b46, type: 2}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &7199392534321219187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8257200452359194335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0315fef41cf8fd49b6bb934d7d22459, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frequency: 700
+  volume: 0.2
+  unitTime: 0.08
 --- !u!1 &8358850357040644518
 GameObject:
   m_ObjectHideFlags: 0
@@ -3284,6 +3433,81 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &8536061276639461073
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 813515627511745913}
+  - component: {fileID: 7661797778671906449}
+  - component: {fileID: 3490870595934544}
+  m_Layer: 5
+  m_Name: SignalMeterBar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &813515627511745913
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8536061276639461073}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7526743737891104335}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -654.86163, y: 61.075}
+  m_SizeDelta: {x: 200, y: 200}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &7661797778671906449
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8536061276639461073}
+  m_CullTransparentMesh: 1
+--- !u!114 &3490870595934544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8536061276639461073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.39263976, g: 1, b: 0, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 3
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &8648948985914973539
 GameObject:
   m_ObjectHideFlags: 0

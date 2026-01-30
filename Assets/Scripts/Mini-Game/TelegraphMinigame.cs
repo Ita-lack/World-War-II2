@@ -26,9 +26,11 @@ public class TelegraphMinigame : MonoBehaviour
     [SerializeField] private TextMeshProUGUI statusText;
     [SerializeField] private GameObject messagePanel;
     [SerializeField] private TextMeshProUGUI messageText;
+    [SerializeField] private MorseAudioPlayer morsePlayer;
 
     [Header("Mensagens a ser tranmitida")]
     [SerializeField] private string[] messages;
+    public string activeMensage;
     
     //Cotroles
     private float targetFrequency;//Frequência alvo A
@@ -74,7 +76,7 @@ public class TelegraphMinigame : MonoBehaviour
         currentA = knobA.GetValue();//frequencySlider.value;
         currentB = knobB.GetValue();//frequencySliderB.value;
 
-        frequencyText.text = $"A:{currentA:00.0}  B:{currentB:00.0} MHz";
+        frequencyText.text = $"{currentA + currentB:00.00} MHz";//$"A:{currentA:00.0}  B:{currentB:00.0} MHz";
 
         distanceA = Mathf.Abs(currentA - targetFrequency);
         distanceB = Mathf.Abs(currentB - targetFrequencyB);
@@ -97,21 +99,9 @@ public class TelegraphMinigame : MonoBehaviour
     {
         targetFrequency = Random.Range(minFrequency, maxFrequency);
         targetFrequencyB = Random.Range(minFrequency, maxFrequency);
-        Debug.Log("Target Frequency: " + targetFrequency);
+        Debug.Log("Target Frequency: " + targetFrequency + targetFrequencyB);
     }
 
-    private void UpdateSignalMeter(float distance)//Atualiza o que é utilizado como referencia para a resposta
-    {
-        float maxDistance = maxFrequency - minFrequency;
-        float normalized = 1f - (distance / maxDistance);
-        normalized = Mathf.Clamp01(normalized);
-        signalMeter.fillAmount = normalized; // opcional
-        UpdateNeedle(normalized);
-        statusText.text = normalized > 0.95f
-        ? "SIGNAL STABLE"
-        : "TUNING...";
-    
-    }
 
     private void UpdateNeedle(float normalizedSignal)//Controla a agulha
     {
@@ -134,19 +124,26 @@ public class TelegraphMinigame : MonoBehaviour
     {
         messageUnlocked = true;
         statusText.text = "TRANSMISSION LOCKED";
-        messagePanel.SetActive(true);
+        
 
-        messageText.text = messages[RandomizerMansage()];
+        string msg = messages[RandomizerMansage()];
+        string coords =  morsePlayer.GenerateRandomCoordinates();
+        string finalMessage = msg + " " + coords;
+        messagePanel.SetActive(true);
+        activeMensage = finalMessage;
+        //messageText.text = msg;morsePlayer.BuildFullMorseMessage(
+        //morsePlayer.Play(msg + " " + morsePlayer.GenerateRandomCoordinates());
+        morsePlayer.PlayRealtime(finalMessage, messageText);
     }
 
-    private int RandomizerMansage()
+    private int RandomizerMansage()//Escolhe aleatoriamente a mensagem a ser exibida 
     {
         int r = 0;
         r = Random.Range(0, messages.Length);
         return r;
     }
-
-    public void ResetMinigame()
+    
+    public void ResetMinigame()//reseta as mensagens
     {
        messageUnlocked = false;
        GenerateTargetFrequency();
@@ -158,7 +155,8 @@ public class TelegraphMinigame : MonoBehaviour
        
        currentNeedleAngle = minNeedleAngle;
        needleTransform.localRotation = Quaternion.Euler(0, 0, minNeedleAngle);
-       
+
+       activeMensage = "";
        signalMeter.fillAmount = 0f;
        statusText.text = "TRANSMISSION LOST";
        messagePanel.SetActive(false);
