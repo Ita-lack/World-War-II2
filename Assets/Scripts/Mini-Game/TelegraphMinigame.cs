@@ -110,7 +110,7 @@ public class TelegraphMinigame : MonoBehaviour
         needleTransform.localRotation = Quaternion.Euler(0f, 0f, currentNeedleAngle);
     }
 
-    void UpdateSignalMeterCombined(float normalized)
+    void UpdateSignalMeterCombined(float normalized)//
     {
         signalMeter.fillAmount = normalized;
         UpdateNeedle(normalized);

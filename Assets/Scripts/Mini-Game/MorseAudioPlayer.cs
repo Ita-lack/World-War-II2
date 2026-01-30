@@ -34,12 +34,6 @@ public class MorseAudioPlayer : MonoBehaviour
         source.playOnAwake = false;
     }
 
-    /*public void Play(string message)// MÉTODO PRINCIPAL
-    {
-        StopAllCoroutines();
-        StartCoroutine(PlayMorse(message.ToUpper()));
-    }*/
-
     public void PlayRealtime(string message, TMPro.TextMeshProUGUI output)
     {
         StopAllCoroutines();
@@ -80,33 +74,6 @@ public class MorseAudioPlayer : MonoBehaviour
         }
     }
 
-    /*IEnumerator PlayMorse(string msg)//Toca a mensagem
-    {
-        foreach (char c in msg)
-        {
-            if (c == ' ')
-            {
-                yield return new WaitForSeconds(unitTime * 7);
-                continue;
-            }
-
-            if (!morseTable.ContainsKey(c))
-                continue;
-
-            string code = morseTable[c];
-
-            foreach (char symbol in code)
-            {
-                float duration = (symbol == '.') ? unitTime : unitTime * 3;
-
-                yield return StartCoroutine(Beep(duration));
-                yield return new WaitForSeconds(unitTime);
-            }
-
-            yield return new WaitForSeconds(unitTime * 2);
-        }
-    }*/
-
     IEnumerator Beep(float duration)//O som
     {
         source.clip = GenerateTone(duration);
@@ -132,7 +99,7 @@ public class MorseAudioPlayer : MonoBehaviour
         return clip;
     }
     
-    public string GenerateRandomCoordinates()
+    public string GenerateRandomCoordinates()//Gera coordenadas aleatorias
     {
         int x = Random.Range(0, 66);//  Latitude
         int y = Random.Range(35, 76);// Longitude
@@ -140,7 +107,7 @@ public class MorseAudioPlayer : MonoBehaviour
         return $"{x} {y}";
     }
 
-    public string BuildFullMorseMessage(string baseMessage)
+    public string BuildFullMorseMessage(string baseMessage)//Combina o texto da mensagem com as coordenadas
     {
         string coords = GenerateRandomCoordinates();
 
