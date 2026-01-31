@@ -8,6 +8,9 @@ public class InputReader : ScriptableObject, PlayerInputMap.IPlayerActions
 {
     private PlayerInputMap _playersInput;
     public event UnityAction ActionEvent = delegate { };
+
+    public event UnityAction HelpEvent = delegate { };
+
     public event UnityAction<Vector3> MoveEvent = delegate { };
     public event UnityAction<Vector2> MoveMouseEvent = delegate { };
 
@@ -38,5 +41,9 @@ public class InputReader : ScriptableObject, PlayerInputMap.IPlayerActions
     public void OnMoveMouse(InputAction.CallbackContext context)
     {
         MoveMouseEvent.Invoke(context.ReadValue<Vector2>());
+    }
+    public void OnHelpInput(InputAction.CallbackContext context)
+    {
+       if (context.phase == InputActionPhase.Performed) HelpEvent.Invoke();
     }
 }

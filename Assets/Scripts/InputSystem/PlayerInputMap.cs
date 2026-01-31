@@ -117,6 +117,15 @@ public partial class @PlayerInputMap: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""HelpInput"",
+                    ""type"": ""Button"",
+                    ""id"": ""6a5a92b4-5792-471e-96ce-7246120a8cba"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -218,6 +227,17 @@ public partial class @PlayerInputMap: IInputActionCollection2, IDisposable
                     ""action"": ""MoveInput"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e8731bc9-a20d-4e57-8326-331d63714190"",
+                    ""path"": ""<Keyboard>/h"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HelpInput"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -229,6 +249,7 @@ public partial class @PlayerInputMap: IInputActionCollection2, IDisposable
         m_Player_MoveInput = m_Player.FindAction("MoveInput", throwIfNotFound: true);
         m_Player_ActionInput = m_Player.FindAction("ActionInput", throwIfNotFound: true);
         m_Player_MoveMouse = m_Player.FindAction("MoveMouse", throwIfNotFound: true);
+        m_Player_HelpInput = m_Player.FindAction("HelpInput", throwIfNotFound: true);
     }
 
     ~@PlayerInputMap()
@@ -312,6 +333,7 @@ public partial class @PlayerInputMap: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_MoveInput;
     private readonly InputAction m_Player_ActionInput;
     private readonly InputAction m_Player_MoveMouse;
+    private readonly InputAction m_Player_HelpInput;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -335,6 +357,10 @@ public partial class @PlayerInputMap: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/MoveMouse".
         /// </summary>
         public InputAction @MoveMouse => m_Wrapper.m_Player_MoveMouse;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/HelpInput".
+        /// </summary>
+        public InputAction @HelpInput => m_Wrapper.m_Player_HelpInput;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -370,6 +396,9 @@ public partial class @PlayerInputMap: IInputActionCollection2, IDisposable
             @MoveMouse.started += instance.OnMoveMouse;
             @MoveMouse.performed += instance.OnMoveMouse;
             @MoveMouse.canceled += instance.OnMoveMouse;
+            @HelpInput.started += instance.OnHelpInput;
+            @HelpInput.performed += instance.OnHelpInput;
+            @HelpInput.canceled += instance.OnHelpInput;
         }
 
         /// <summary>
@@ -390,6 +419,9 @@ public partial class @PlayerInputMap: IInputActionCollection2, IDisposable
             @MoveMouse.started -= instance.OnMoveMouse;
             @MoveMouse.performed -= instance.OnMoveMouse;
             @MoveMouse.canceled -= instance.OnMoveMouse;
+            @HelpInput.started -= instance.OnHelpInput;
+            @HelpInput.performed -= instance.OnHelpInput;
+            @HelpInput.canceled -= instance.OnHelpInput;
         }
 
         /// <summary>
@@ -451,5 +483,12 @@ public partial class @PlayerInputMap: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnMoveMouse(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "HelpInput" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnHelpInput(InputAction.CallbackContext context);
     }
 }

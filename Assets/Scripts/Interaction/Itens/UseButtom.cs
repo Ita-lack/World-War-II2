@@ -1,10 +1,14 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class UseButtom : Interactable, IInteractable, IObserver
 {
     //------------------------- Variaveis Globais privadas -------------------------------
     bool warning = false;
+    public string responceCorret;
+    public TelegraphMinigame telegraphMinigame;
     private void OnEnable(){
+        UIManager.Instance.ShowButtom(responceCorret, GetComponentInChildren<TMPro.TextMeshProUGUI>());
         RegisterEvent();
     }
     private void OnDisable(){
@@ -15,14 +19,13 @@ public class UseButtom : Interactable, IInteractable, IObserver
         warning = !warning;
     }
     public void BaseAction(){
-        Debug.Log("[UseButtom] BaseAction");
         if(!warning) return;
-        Debug.Log("[UseButtom] Alerta removido");
+        Debug.Log("[UseButtom] BaseAction" + telegraphMinigame.GetMessageStatus(responceCorret));
         warning = false;
         if (_observerEventSpeak != null){
             foreach (var channel in _observerEventSpeak){
                 if (channel != null){
-                    channel.NotifyObservers(1);
+                    channel.NotifyObservers(telegraphMinigame.GetMessageStatus(responceCorret) ? 1 : -1);
                 }
             }
         }

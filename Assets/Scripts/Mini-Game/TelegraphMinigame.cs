@@ -130,7 +130,7 @@ public class TelegraphMinigame :  Interactable, IObserver, IInteractable
         string coords =  morsePlayer.GenerateRandomCoordinates();
         string finalMessage = msg + " " + coords;
         messagePanel.SetActive(true);
-        activeMensage = finalMessage;
+        activeMensage = msg;
         //messageText.text = msg;morsePlayer.BuildFullMorseMessage(
         //morsePlayer.Play(msg + " " + morsePlayer.GenerateRandomCoordinates());
         morsePlayer.PlayRealtime(finalMessage, messageText);
@@ -173,8 +173,8 @@ public class TelegraphMinigame :  Interactable, IObserver, IInteractable
     }
 
     public void OnEventRaised(int message, object additionalInformation){
-        Debug.Log("[TelegraphMinigame] ResetMinigame");
         ResetMinigame();
+        UIManager.Instance.UpdateScore(message);
     } 
     
     protected override void UnregisterEvent(){
@@ -200,5 +200,11 @@ public class TelegraphMinigame :  Interactable, IObserver, IInteractable
             }
         }
     }
-    
+    public bool GetMessageStatus(string messageStatus){
+        if(activeMensage == messageStatus){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }

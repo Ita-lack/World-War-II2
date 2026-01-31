@@ -16,7 +16,6 @@ public class MapMiniGame : Interactable, IInteractable
     private float xEixo;
     private float yEixo;
 
-    private bool confirm = true;
 
     private Vector2 coord = new Vector2();
     public void Start(){
