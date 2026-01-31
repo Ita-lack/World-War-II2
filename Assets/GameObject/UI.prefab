@@ -851,7 +851,7 @@ MonoBehaviour:
   _observerEventListening:
   - {fileID: 8311267574642574678}
   _observerEventSpeak:
-  - {fileID: 837637428539730257}
+  - {fileID: 1529487397009386734}
   _useAnimation: 0
   animator: {fileID: 0}
   parameterName: 
@@ -2745,7 +2745,7 @@ MonoBehaviour:
   _observerEventListening:
   - {fileID: 8311267574642574678}
   _observerEventSpeak:
-  - {fileID: 2542425413335603877}
+  - {fileID: 1529487397009386734}
   _useAnimation: 0
   animator: {fileID: 0}
   parameterName: 
@@ -4876,7 +4876,7 @@ MonoBehaviour:
   _observerEventListening:
   - {fileID: 8311267574642574678}
   _observerEventSpeak:
-  - {fileID: 8447982364272889214}
+  - {fileID: 1529487397009386734}
   _useAnimation: 0
   animator: {fileID: 0}
   parameterName: 
@@ -5092,6 +5092,7 @@ GameObject:
   m_Component:
   - component: {fileID: 585371657130838723}
   - component: {fileID: 4705769546481052955}
+  - component: {fileID: 1529487397009386734}
   m_Layer: 5
   m_Name: Telegraph
   m_TagString: Untagged
@@ -5146,9 +5147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _actionType: 0
   _observerEventListening:
-  - {fileID: 2542425413335603877}
-  - {fileID: 8447982364272889214}
-  - {fileID: 837637428539730257}
+  - {fileID: 1529487397009386734}
   _observerEventSpeak: []
   _useAnimation: 0
   animator: {fileID: 0}
@@ -5176,6 +5175,18 @@ MonoBehaviour:
   - AM
   - RF
   activeMensage: 
+--- !u!114 &1529487397009386734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8252455264667979913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e59850bda39d94da28e70608e214d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8257200452359194335
 GameObject:
   m_ObjectHideFlags: 0

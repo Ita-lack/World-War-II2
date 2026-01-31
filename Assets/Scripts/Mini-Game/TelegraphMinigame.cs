@@ -174,6 +174,8 @@ public class TelegraphMinigame :  Interactable, IObserver, IInteractable
 
     public void OnEventRaised(int message, object additionalInformation){
         ResetMinigame();
+        morsePlayer.SetXY(100,100);
+        Debug.Log("[TelegraphMinigame] Minigame Reseted by event.");
         UIManager.Instance.UpdateScore(message);
     } 
     

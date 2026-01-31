@@ -150,5 +150,10 @@ public class MorseAudioPlayer : MonoBehaviour
         Vector2 v = new Vector2(x,y);
         return v;
     }
+    public void SetXY(int valuex, int valuey)
+    {
+        x = valuex;
+        y = valuey;
+    }
 
 }
