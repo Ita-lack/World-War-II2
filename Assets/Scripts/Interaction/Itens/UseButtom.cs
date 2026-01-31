@@ -1,5 +1,5 @@
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UseButtom : Interactable, IInteractable, IObserver
 {
@@ -7,6 +7,7 @@ public class UseButtom : Interactable, IInteractable, IObserver
     bool warning = false;
     public string responceCorret;
     public TelegraphMinigame telegraphMinigame;
+    public Image targetColorX;
     private void OnEnable(){
         UIManager.Instance.ShowButtom(responceCorret, GetComponentInChildren<TMPro.TextMeshProUGUI>());
         RegisterEvent();
@@ -21,6 +22,7 @@ public class UseButtom : Interactable, IInteractable, IObserver
     public void BaseAction(){
         if(!warning) return;
         Debug.Log("[UseButtom] BaseAction" + telegraphMinigame.GetMessageStatus(responceCorret));
+        targetColorX.color = new Color(1, 0, 0);
         warning = false;
         if (_observerEventSpeak != null){
             foreach (var channel in _observerEventSpeak){

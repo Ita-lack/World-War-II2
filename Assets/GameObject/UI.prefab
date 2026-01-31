@@ -859,6 +859,7 @@ MonoBehaviour:
   _customScripts: []
   responceCorret: RF
   telegraphMinigame: {fileID: 4705769546481052955}
+  targetColorX: {fileID: 4732695634177435822}
 --- !u!114 &837637428539730257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1010,6 +1011,7 @@ MonoBehaviour:
   longitudeSlider: {fileID: 4652913803714769456}
   mapMarking: {fileID: 5091201161349092413}
   mapArea: {fileID: 9103363437831499447}
+  targetColorX: {fileID: 4732695634177435822}
   mAPTelegraph: {fileID: 7199392534321219187}
 --- !u!114 &8311267574642574678
 MonoBehaviour:
@@ -2751,6 +2753,7 @@ MonoBehaviour:
   _customScripts: []
   responceCorret: SP
   telegraphMinigame: {fileID: 4705769546481052955}
+  targetColorX: {fileID: 4732695634177435822}
 --- !u!114 &2542425413335603877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4881,6 +4884,7 @@ MonoBehaviour:
   _customScripts: []
   responceCorret: AM
   telegraphMinigame: {fileID: 4705769546481052955}
+  targetColorX: {fileID: 4732695634177435822}
 --- !u!114 &8447982364272889214
 MonoBehaviour:
   m_ObjectHideFlags: 0

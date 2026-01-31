@@ -7,6 +7,7 @@ public class MapMiniGame : Interactable, IInteractable
     public Slider longitudeSlider;
     public RectTransform mapMarking;
     public RectTransform mapArea;
+    public Image targetColorX;
     public MorseAudioPlayer mAPTelegraph;
     private float latitude;         
     private float longitude;
@@ -36,14 +37,16 @@ public class MapMiniGame : Interactable, IInteractable
     public void UpdateNewPuzzle(){
         latitudeSlider.value = Random.Range(latitudeSlider.minValue, latitudeSlider.maxValue);
         longitudeSlider.value = Random.Range(longitudeSlider.minValue, longitudeSlider.maxValue);
+        targetColorX.color = new Color(1, 0, 0);
         BaseAction();
     }
     public void PuzzleVerified(){
-        //
         coord.x = latitude;
         coord.y = longitude;
         Debug.Log($"[MapMiniGame] Current Coord: {coord} - Target Coord: {mAPTelegraph.GetCurrentCoords()}");
+        if(targetColorX.color ==  new Color(0, 1, 0))targetColorX.color = new Color(1, 0, 0);
         if(coord !=  mAPTelegraph.GetCurrentCoords())return; 
+        targetColorX.color = new Color(0, 1, 0);
         if (_observerEventSpeak != null){
             foreach (var channel in _observerEventSpeak){
                 if (channel != null){
