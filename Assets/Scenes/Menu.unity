@@ -539,6 +539,7 @@ GameObject:
   - component: {fileID: 998728525}
   - component: {fileID: 998728524}
   - component: {fileID: 998728523}
+  - component: {fileID: 998728526}
   m_Layer: 5
   m_Name: Instructions
   m_TagString: Untagged
@@ -561,10 +562,10 @@ RectTransform:
   - {fileID: 563884693}
   m_Father: {fileID: 1042580670}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -741.63, y: -162}
-  m_SizeDelta: {x: 348.1462, y: 105.21}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 218.37, y: -162}
+  m_SizeDelta: {x: 348.14624, y: 105.21}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &998728523
 MonoBehaviour:
@@ -609,7 +610,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 998728524}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 998728526}
+        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+        m_MethodName: OnLoadScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &998728524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -648,6 +661,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 998728521}
   m_CullTransparentMesh: 1
+--- !u!114 &998728526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998728521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9257e4e4e5f01d49a781cdca0c74a13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scene: Instructions
 --- !u!1 &1042580666
 GameObject:
   m_ObjectHideFlags: 0
@@ -746,6 +772,7 @@ RectTransform:
   - {fileID: 1339058836}
   - {fileID: 998728522}
   - {fileID: 1624421982}
+  - {fileID: 1627068478}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -844,6 +871,7 @@ GameObject:
   - component: {fileID: 1339058839}
   - component: {fileID: 1339058838}
   - component: {fileID: 1339058837}
+  - component: {fileID: 1339058840}
   m_Layer: 5
   m_Name: Play
   m_TagString: Untagged
@@ -866,10 +894,10 @@ RectTransform:
   - {fileID: 986006473}
   m_Father: {fileID: 1042580670}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -748.72766, y: -0.000011444}
-  m_SizeDelta: {x: 362.3346, y: 105.21}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 218.37, y: -0.0236}
+  m_SizeDelta: {x: 348.15002, y: 105.2571}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1339058837
 MonoBehaviour:
@@ -914,7 +942,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1339058838}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1339058840}
+        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+        m_MethodName: OnLoadScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1339058838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -953,6 +993,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1339058835}
   m_CullTransparentMesh: 1
+--- !u!114 &1339058840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1339058835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9257e4e4e5f01d49a781cdca0c74a13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scene: Game
 --- !u!1 &1499282027
 GameObject:
   m_ObjectHideFlags: 0
@@ -1086,6 +1139,7 @@ GameObject:
   - component: {fileID: 1624421985}
   - component: {fileID: 1624421984}
   - component: {fileID: 1624421983}
+  - component: {fileID: 1624421986}
   m_Layer: 5
   m_Name: Credits
   m_TagString: Untagged
@@ -1108,10 +1162,10 @@ RectTransform:
   - {fileID: 463686678}
   m_Father: {fileID: 1042580670}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -741.63, y: -318}
-  m_SizeDelta: {x: 348.1462, y: 105.21}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 218.37, y: -318}
+  m_SizeDelta: {x: 348.14624, y: 105.21}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1624421983
 MonoBehaviour:
@@ -1156,7 +1210,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1624421984}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1624421986}
+        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+        m_MethodName: OnLoadScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1624421984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1194,6 +1260,98 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1624421981}
+  m_CullTransparentMesh: 1
+--- !u!114 &1624421986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624421981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9257e4e4e5f01d49a781cdca0c74a13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scene: Credits
+--- !u!1 &1627068477
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1627068478}
+  - component: {fileID: 1627068480}
+  - component: {fileID: 1627068479}
+  m_Layer: 5
+  m_Name: Text (Legacy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1627068478
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627068477}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1042580670}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 430.94, y: 297}
+  m_SizeDelta: {x: 801.6763, y: 155.8206}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1627068479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627068477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 123
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 172
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: War Codes
+--- !u!222 &1627068480
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627068477}
   m_CullTransparentMesh: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

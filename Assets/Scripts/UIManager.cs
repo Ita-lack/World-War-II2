@@ -41,7 +41,7 @@ public class UIManager : MonoBehaviour
     }
     public void Start()
     {
-        scoreText.text = "Score: 5";
+        scoreText.text = "Score: 0";
     }
     public void ShowCord(float lat, float lon)
     {
@@ -58,8 +58,8 @@ public class UIManager : MonoBehaviour
         if(score < 0){
             score = 0;
             scoreText.text = $"Score: {score}";
-            SceneManager.LoadScene("GameOver");
-        }else if(score < 10){
+            SceneManager.LoadScene("Defeat");
+        }else if(score <5){
             scoreText.text = $"Score: {score}";
         }else{
             SceneManager.LoadScene("Victory");

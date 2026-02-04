@@ -24,14 +24,7 @@ public class UseButtom : Interactable, IInteractable, IObserver
         Debug.Log("[UseButtom] BaseAction" + telegraphMinigame.GetMessageStatus(responceCorret));
         targetColorX.color = new Color(1, 0, 0);
         warning = false;
-        if (_observerEventSpeak != null){
-            foreach (var channel in _observerEventSpeak){
-                if (channel != null){
-                    channel.NotifyObservers(telegraphMinigame.GetMessageStatus(responceCorret) ? 1 : -1);
-                }
-            }
-        }
-        ExecuteOrder(1);
+        telegraphMinigame.OnEventRaised(1,null);
     }
     /*------------------------------------------------------------------------------
     Função:     UnregisterEvent

@@ -1,4 +1,4 @@
-using UnityEditor.Rendering;
+
 using UnityEngine;
 using UnityEngine.UI;
 public class MapMiniGame : Interactable, IInteractable
